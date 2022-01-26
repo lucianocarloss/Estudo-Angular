@@ -9,20 +9,19 @@ import { CursosService } from './cursos.service';
 })
 export class CursosComponent implements OnInit {
 
-  nomePortal: string;
 
-  cursos: string[];
+  cursos: string[] = [];
+  // cursosService: CursosService;
 
-  constructor(private cursosService: CursosService) {
-      this.nomePortal = 'http://loiane.training';
+  constructor(private cursosService: CursosService) { 
+    // this.cursosService = new CursosService();
+    // this.cursosService = _cursosService;
+  }
 
-    // var servico = new CursosService();
+  ngOnInit() {
+
     this.cursos = this.cursosService.getCursos();
 
-
-   }
-
-  ngOnInit(): void {
   }
 
 }
